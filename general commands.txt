@@ -1,0 +1,18 @@
+Command to check no of tasks in redis -
+    redis-cli -n 0 -h localhost -p 6379 llen celery
+
+Explanation :
+1 - is database name , 6379 - port no , celery - name of queue (celery is default name of queue)
+
+Command to run redis  -
+    redis-server /usr/local/etc/redis.conf
+
+Command to run Celery  -
+    venv/bin/celery worker -A celery1.celery --loglevel=info
+
+
+Just start 3 terminal
+
+One terminal for redis server
+One terminal for celery worker
+One terminal for flask server
