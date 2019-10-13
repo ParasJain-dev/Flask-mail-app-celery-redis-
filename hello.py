@@ -50,3 +50,7 @@ def send_email():
 @app.route('/post', methods=['POST'])
 def sample_posted():
     return "This is a test POST Request"
+
+@app.route('/get', methods=['GET'])
+def sample_got():
+    return "This is a test GET Request"
