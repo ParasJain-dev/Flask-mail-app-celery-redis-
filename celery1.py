@@ -8,6 +8,8 @@ application = current_app._get_current_object()
 
 worker = worker.worker(app=application)
 
+print(worker)
+
 options = {
     'broker': app.config['CELERY_BROKER_URL'],
     'loglevel': 'INFO',
