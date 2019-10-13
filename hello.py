@@ -9,6 +9,7 @@ app = Flask(__name__)
 app.config['CELERY_BROKER_URL'] = 'redis://localhost:6379/0'
 app.config['CELERY_RESULT_BACKEND'] = 'redis://localhost:6379/0'
 celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
+print(celery)
 celery.conf.update(app.config)
 
 app.config.update(dict(
@@ -45,3 +46,7 @@ def send_email():
         msg.html = "<b>Finally baarish is here!!!!</b>"
         mail.send(msg)
 
+
+@app.route('/post', methods=['POST'])
+def sample_posted():
+    return "This is a test POST Request"
